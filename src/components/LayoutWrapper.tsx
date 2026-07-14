@@ -116,7 +116,7 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
       {/* Main Content Area */}
       <div className={styles.mainLayout}>
         <header className={styles.header}>
-          <div style={{ display: 'flex', align-items: 'center', gap: '16px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
             <button 
               onClick={toggleMobileMenu} 
               style={{
