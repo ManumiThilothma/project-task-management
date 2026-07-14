@@ -4,9 +4,8 @@ TaskFlow Pro is a highly responsive, modern, secure, and role-based full-stack p
 
 ---
 
-## 🚀 Live Demo & Repository
-- **GitHub Repository**: [Public Link (Replace with your actual GitHub URL)]
-- **Live Deployment Link**: [Deployment Link (e.g. Vercel / Render / Supabase) - If available]
+## 🚀 Repository
+- **GitHub Repository**:https://github.com/ManumiThilothma/project-task-management
 
 ---
 
@@ -166,8 +165,8 @@ graph TD
 
 ### Step 1: Clone and Install
 ```bash
-git clone <your-repository-url>
-cd task-management
+git clone https://github.com/ManumiThilothma/project-task-management.git
+cd project-task-management
 npm install
 ```
 
