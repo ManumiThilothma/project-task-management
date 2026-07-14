@@ -1,0 +1,39 @@
+name: TaskFlow CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+          cache-dependency-path: './package.json'
+
+      - name: Install Project Dependencies
+        run: npm ci
+
+      - name: Generate Prisma Client
+        run: npx prisma generate
+        env:
+          DATABASE_URL: "postgresql://postgres:password@localhost:5432/task_management?schema=public"
+
+      - name: Run Next.js Linter
+        run: npm run lint
+
+      - name: Validate Next.js Production Build
+        run: npm run build
+        env:
+          DATABASE_URL: "postgresql://postgres:password@localhost:5432/task_management?schema=public"
+          JWT_SECRET: "ci_pipeline_stub_jwt_secret_value"

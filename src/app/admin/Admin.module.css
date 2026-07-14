@@ -1,0 +1,225 @@
+.adminHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.tableWrapper {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 32px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  background-color: rgba(16, 20, 30, 0.4);
+}
+
+.th {
+  background-color: rgba(16, 20, 30, 0.8);
+  padding: 16px 24px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: hsl(var(--text-secondary));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid hsl(var(--border-subtle));
+}
+
+.tr {
+  border-bottom: 1px solid hsl(var(--border-subtle));
+  transition: var(--transition-fast);
+}
+
+.tr:hover {
+  background-color: rgba(16, 20, 30, 0.7);
+}
+
+.tr:last-child {
+  border-bottom: none;
+}
+
+.td {
+  padding: 18px 24px;
+  font-size: 0.9rem;
+}
+
+.userName {
+  font-weight: 600;
+  color: #fff;
+}
+
+.userEmail {
+  color: hsl(var(--text-secondary));
+  font-size: 0.8rem;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.actionButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+}
+
+.editButton {
+  color: hsl(var(--primary));
+}
+
+.editButton:hover {
+  background-color: rgba(124, 58, 237, 0.1);
+  color: hsl(var(--primary-hover));
+}
+
+.deleteButton {
+  color: hsl(var(--danger));
+}
+
+.deleteButton:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: hsl(350 89% 70%);
+}
+
+/* Modals & Forms */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(6, 8, 14, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal {
+  width: 100%;
+  max-width: 500px;
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fadeIn var(--transition-normal) forwards;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modalTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: hsl(var(--text-secondary));
+  cursor: pointer;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.closeButton:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: hsl(var(--text-secondary));
+}
+
+.input, .select {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: rgba(16, 20, 30, 0.8);
+  border: 1px solid hsl(var(--border-subtle));
+  border-radius: var(--radius-md);
+  color: hsl(var(--text-primary));
+  font-size: 0.95rem;
+  transition: var(--transition-fast);
+  outline: none;
+}
+
+.input:focus, .select:focus {
+  border-color: hsl(var(--border-focus));
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+.select option {
+  background-color: hsl(var(--bg-surface-elevated));
+  color: #fff;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.btn {
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btnSecondary {
+  background-color: transparent;
+  border: 1px solid hsl(var(--border-subtle));
+  color: hsl(var(--text-secondary));
+}
+
+.btnSecondary:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, #7c3aed 100%);
+  border: none;
+  color: #fff;
+}
+
+.btnPrimary:hover {
+  background: linear-gradient(135deg, hsl(var(--primary-hover)) 0%, #8b5cf6 100%);
+}
+
+.btnPrimary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
